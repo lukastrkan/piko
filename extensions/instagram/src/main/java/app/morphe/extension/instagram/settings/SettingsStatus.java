@@ -80,7 +80,9 @@ public class SettingsStatus {
     public static void inboxLock() { inboxLock = true; }
     public static boolean hiddenChats = false;
     public static void hiddenChats() { hiddenChats = true; }
-    public static boolean dmSection(){ return markChatAsRead || unlimitedReplaysOnEphemeralMedia || saveDeletedMessages || inboxLock || hiddenChats || disableDisappearingMessagesGesture ;}
+    public static boolean dmNotificationAllowlist = false;
+    public static void dmNotificationAllowlist() { dmNotificationAllowlist = true; }
+    public static boolean dmSection(){ return markChatAsRead || unlimitedReplaysOnEphemeralMedia || saveDeletedMessages || inboxLock || hiddenChats || dmNotificationAllowlist || disableDisappearingMessagesGesture ;}
 
     //Story section
     public static boolean customiseStoryTimestamp = false;
@@ -323,6 +325,7 @@ public class SettingsStatus {
         FLAGS.put(str("piko_change_like_animation"),SettingsStatus.changeLikeAnimation);
         FLAGS.put(str("piko_inbox_lock"),SettingsStatus.inboxLock);
         FLAGS.put(str("piko_hidden_chats"),SettingsStatus.hiddenChats);
+        FLAGS.put(str("piko_dm_notif_allowlist"),SettingsStatus.dmNotificationAllowlist);
 
         FLAGS.put(str("piko_disable_double_tap_to_like"),SettingsStatus.disableDoubleTapLike);
         FLAGS.put(str("piko_hide_group_creation_button_on_sharesheet"),SettingsStatus.hideGroupCreationOnSharesheet);

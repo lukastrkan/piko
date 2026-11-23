@@ -44,6 +44,7 @@ import app.morphe.extension.crimera.downloader.StorageUtils;
 import app.morphe.extension.instagram.constants.Constants;
 import app.morphe.extension.instagram.constants.UI;
 import app.morphe.extension.instagram.patches.devFlags.RecommendedFlags;
+import app.morphe.extension.instagram.patches.dm.DmNotificationAllowlistPref;
 import app.morphe.extension.instagram.settings.preference.Helper;
 import app.morphe.extension.instagram.settings.preference.ScreenBuilder;
 import app.morphe.extension.instagram.settings.preference.widgets.InstagramPreferenceStyle;
@@ -692,6 +693,10 @@ public final class SettingsActivity {
             refreshPreferenceSummary(
                     "piko_download_set_path",
                     StorageUtils::getCustomPathForDisplay
+            );
+            refreshPreferenceSummary(
+                    "piko_dm_notif_manage",
+                    DmNotificationAllowlistPref::summaryText
             );
             Preference preference = findPreference(Settings.AMOLED_THEME.key);
             if (preference instanceof SwitchPref) {
